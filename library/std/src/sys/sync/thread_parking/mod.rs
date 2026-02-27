@@ -3,7 +3,7 @@ cfg_select! {
         all(target_os = "windows", not(target_vendor = "win7")),
         target_os = "linux",
         target_os = "android",
-        all(target_arch = "wasm32", target_feature = "atomics"),
+        all(any(target_arch = "wasm32", target_arch = "wasm64"), target_feature = "atomics"),
         target_os = "freebsd",
         target_os = "openbsd",
         target_os = "dragonfly",
